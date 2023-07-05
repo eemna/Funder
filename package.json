@@ -1,0 +1,31 @@
+{
+  "name": "funder2",
+  "version": "1.0.0",
+  "license": "(MIT AND Apache-2.0)",
+  "scripts": {
+    "start": "cd frontend && npm run start",
+    "deploy": "cd contract && npm run deploy",
+    "build": "npm run build:contract && npm run build:web",
+    "build:web": "cd frontend && npm run build",
+    "build:contract": "cd contract && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:unit": "cd contract && npm test",
+    "test:integration": "cd integration-tests && npm test -- -- \"./contract/build/hello_near.wasm\"",
+    "postinstall": "cd frontend && npm install && cd .. && cd integration-tests && npm install && cd .. && cd contract && npm install"
+  },
+  "devDependencies": {
+    "near-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.3",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.6",
+    "@mui/styled-engine-sc": "^5.12.0",
+    "code": "^5.2.4",
+    "near-api-js": "^2.1.4",
+    "react-router-dom": "^6.14.0",
+    "styled-components": "^5.3.11"
+  }
+}
